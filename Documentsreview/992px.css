@@ -1,0 +1,51 @@
+/*992px*/
+@media (max-width :992px){
+    section .container{
+        width: 720px;
+    }
+    .nvabar .link{
+        display: none;
+    }
+    .nvabar .menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero{flex-direction: column-reverse;}
+    .hero .left,
+    .hero .right{
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .hero img{
+      width: 70%;
+    }
+  
+    .hero .info{
+      text-align: center;
+      padding: 0 1rem;
+    }
+  
+    .work .cards,
+    .services .cards,
+    .contact .cards{
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .about-us .container,
+    .experience .container{
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .submit .container{
+      flex-direction: column;
+    }
+  
+  .submit .form{
+      padding: 30px 80px;
+  }
+  }
+  /*column 縱行*/

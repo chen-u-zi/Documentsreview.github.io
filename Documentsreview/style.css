@@ -261,15 +261,35 @@ align-items: center;
     font-size: 2.25rem;
     margin-bottom: 1rem; 
 }
-
-.work .cards{
+.container .cards{
     margin: 3rem auto;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
+    display: flex;
+    justify-content: space-between;
 }
-
+.work .cards{
+    margin: 3rem auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;  /* 設定為自動換行 */
+    justify-content: center;
+}
+.card:hover {
+    transform: rotateX(180deg); /* 滑鼠滑過時旋轉 180 度 */
+}
+.cards .cardbox{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.cardbox .card{
+height: 500px;
+}
 .work .card{
+    width: 500px;
     padding: 30px;
     border-radius: 20px;
     background-color: #fff;
@@ -279,8 +299,19 @@ align-items: center;
     align-items: flex-start;
     text-align: left;
     color: var(--primry-color);
+    transform-style: preserve-3d; /* 保持 3D 變形效果 */
+            transition: transform 0.6s; /* 旋轉動畫效果 */
 }
-
+.work .card-back {
+    transform: rotateX(180deg); /* 背面預設翻轉 180 度 */
+    display: flex;
+    background-color: none;
+    justify-content: center;
+}
+.work .card-back img{
+    transform: translateY(400px);  /* 向下移動 20px */
+    
+}
 .work .card .number{
     width: 50px;
     height: 50px;
@@ -290,6 +321,12 @@ align-items: center;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.card-face {
+    backface-visibility: hidden; /* 隱藏背面 */
+}
+.card-back {
+    transform: rotateX(180deg); /* 背面預設翻轉 180 度 */
 }
 .work .card h2 {
     font-size: 1.25rem;
@@ -438,100 +475,4 @@ footer{
     padding:8px 45px;
     margin-top: 1.5rem;
 }
-
-/*992px*/
-@media (max-width :992px){
-    section .container{
-        width: 720px;
-    }
-    .nvabar .link{
-        display: none;
-    }
-    .nvabar .menu{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .hero{flex-direction: column-reverse;}
-    .hero .left,
-    .hero .right{
-      width: 100%;
-      justify-content: center;
-    }
-  
-    .hero img{
-      width: 70%;
-    }
-  
-    .hero .info{
-      text-align: center;
-      padding: 0 1rem;
-    }
-  
-    .work .cards,
-    .services .cards,
-    .contact .cards{
-      grid-template-columns: 1fr 1fr;
-    }
-  
-    .about-us .container,
-    .experience .container{
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .submit .container{
-      flex-direction: column;
-    }
-  
-  .submit .form{
-      padding: 30px 80px;
-  }
-  }
-  /*column 縱行*/
-
-  /*768px*/
-  @media (max-width :768px){
-    section{
-      padding: 2rem 0;
-    }
-    section .container{
-      width: 540px;
-    }
-    section .left,
-    section .right{
-      padding: 2rem 0;
-    }
-    .work .cards,
-    .services .cards,
-    .contact .cards{
-      grid-template-columns: 1fr;
-    }
-  
-    .work .card,
-    .submit form{
-      padding: 30px 20px;
-    }
-  
-    .services .card{
-      padding: 10px 20px 30px;
-    }
-  
-    .services .card img{
-      width: 80%;
-    }
-  .submit .filled-btn{
-    width: 100%;
-  }
-  }
-  /*576px*/
-  @media (max-width :576px){
-    .section .container{
-        width: 340px;
-    }
-    .hero h1{
-        font-size: 3.5rem;
-    }
-  }
   

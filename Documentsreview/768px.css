@@ -1,0 +1,43 @@
+/*768px*/
+@media (max-width :768px){
+    section{
+      padding: 2rem 0;
+    }
+    section .container{
+      width: 540px;
+    }
+    section .left,
+    section .right{
+      padding: 2rem 0;
+    }
+    .work .cards,
+    .services .cards,
+    .contact .cards{
+      grid-template-columns: 1fr;
+    }
+  
+    .work .card,
+    .submit form{
+      padding: 30px 20px;
+    }
+  
+    .services .card{
+      padding: 10px 20px 30px;
+    }
+  
+    .services .card img{
+      width: 80%;
+    }
+  .submit .filled-btn{
+    width: 100%;
+  }
+  }
+  /*576px*/
+  @media (max-width :576px){
+    .section .container{
+        width: 340px;
+    }
+    .hero h1{
+        font-size: 3.5rem;
+    }
+  }
